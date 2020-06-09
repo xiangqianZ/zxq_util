@@ -18,6 +18,11 @@ public class ExceptionCatch {
 
         return ResultJson.resultError(e.getMessage());
     }
+    @ExceptionHandler(IllegalArgumentException.class)
+    public JSONObject argException(Exception e) {
+
+        return ResultJson.resultError(e.getMessage());
+    }
 
     @ExceptionHandler(RuntimeException.class)
     public JSONObject runtimeException(Exception e) {
@@ -34,4 +39,5 @@ public class ExceptionCatch {
 
         return ResultJson.resultError("request body is missing");
     }
+
 }
